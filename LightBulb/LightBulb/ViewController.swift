@@ -13,14 +13,28 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Change background color of lightBulb view to red
+        lightBulb.backgroundColor = UIColor.redColor()
+
     }
 
     func changeColor(to color: UIColor) {
-        // TODO: Change background color to "color"
+        lightBulb.backgroundColor = color
+
     }
 
     @IBAction func colorSelected(sender: UISegmentedControl) {
-        // TODO: Change background color when segmented control changes
+        print(sender.selectedSegmentIndex)
+        switch (sender.selectedSegmentIndex) {
+        case 0:
+            changeColor(to: UIColor.redColor())
+        case 1:
+            changeColor(to: UIColor.yellowColor())
+        case 2:
+            changeColor(to: UIColor.blueColor())
+        case 3:
+            changeColor(to: UIColor.greenColor())
+        default:
+            break
+        }
     }
 }
